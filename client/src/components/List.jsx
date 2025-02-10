@@ -9,7 +9,7 @@ const ListContainer = styled.div`
   margin-bottom: 1em;
 `;
 
-const List = ({ date, items = [], expired, todayListID }) => {
+const List = ({ date, items = [], expired }) => {
   const [listItems, setListItems] = useState(items);
   const [itemsPickedUp, setItemsPickedUp] = useState(0);
 
@@ -55,12 +55,7 @@ const List = ({ date, items = [], expired, todayListID }) => {
       </p>
       <ul className="list-group w-100">
         {listItems.map((item) => (
-          <ListItem
-            key={item._id}
-            item={item}
-            expired={expired}
-            todayListID={todayListID}
-          />
+          <ListItem key={item._id} item={item} expired={expired} />
         ))}
       </ul>
     </ListContainer>
