@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import axios from "axios";
 
+import { useTodayList } from "../context/TodayListContext";
+
 const ItemNameContainer = styled.button`
   text-align: left;
 `;
@@ -11,7 +13,9 @@ const ItemText = styled.span`
   flex-grow: 1;
 `;
 
-const ListItem = ({ item, expired, todayListID }) => {
+const ListItem = ({ item, expired }) => {
+  const { todayListID } = useTodayList();
+
   const handleTogglePicked = async () => {
     if (expired) return;
 
