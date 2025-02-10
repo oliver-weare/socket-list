@@ -39,7 +39,7 @@ const BlockSubmissionOverlay = styled.div`
   }
 `;
 
-const ListView = ({ todayListID, lists = [], showBlockSubmissionOverlay }) => {
+const ListView = ({ lists = [], showBlockSubmissionOverlay }) => {
   return (
     <ListViewContainer className="border-top border-bottom mb-4">
       {showBlockSubmissionOverlay && (
@@ -68,7 +68,6 @@ const ListView = ({ todayListID, lists = [], showBlockSubmissionOverlay }) => {
             date={moment(list.date).format("DD-MM-YYYY")}
             items={list.items}
             expired={list.expired}
-            todayListID={todayListID}
           />
         ))}
     </ListViewContainer>

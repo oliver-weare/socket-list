@@ -4,6 +4,8 @@ import axios from "axios";
 import moment from "moment";
 import { io } from "socket.io-client";
 
+import { useTodayList } from "./context/TodayListContext";
+
 import NewListButton from "./components/NewListButton";
 import ListView from "./components/ListView";
 import ItemForm from "./components/ItemForm";
@@ -12,11 +14,17 @@ const socket = io(`${import.meta.env.VITE_API_URL}`);
 
 const App = () => {
   const [lists, setLists] = useState([]);
-  const [todayListID, setTodayListID] = useState(null);
-  const [todayListItemNames, setTodayListItemNames] = useState([]);
-  const [todayListExists, setTodayListExists] = useState(false);
   const [showBlockSubmissionOverlay, setShowBlockSubmissionOverlay] =
     useState(false);
+
+  const {
+    todayListID,
+    setTodayListID,
+    todayListItemNames,
+    setTodayListItemNames,
+    todayListExists,
+    setTodayListExists,
+  } = useTodayList();
 
   const fetchLists = async () => {
     try {

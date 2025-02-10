@@ -2,6 +2,8 @@
 import styled from "styled-components";
 import axios from "axios";
 
+import { useTodayList } from "../context/TodayListContext";
+
 const ItemNameContainer = styled.button`
   text-align: left;
 `;
@@ -11,7 +13,10 @@ const ItemText = styled.span`
   flex-grow: 1;
 `;
 
-const ListItem = ({ item, expired, todayListID }) => {
+const ListItem = ({ item, expired }) => {
+  const { todayListID, todayListItemNames, setTodayListItemNames } =
+    useTodayList();
+
   const handleTogglePicked = async () => {
     if (expired) return;
 
@@ -28,6 +33,9 @@ const ListItem = ({ item, expired, todayListID }) => {
     try {
       await axios.delete(
         `${import.meta.env.VITE_API_URL}/api/items/${item._id}`
+      );
+      setTodayListItemNames((prevNames) =>
+        prevNames.filter((name) => name !== item.name)
       );
     } catch (error) {
       console.error("Error deleting item:", error);
