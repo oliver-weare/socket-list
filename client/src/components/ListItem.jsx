@@ -14,7 +14,8 @@ const ItemText = styled.span`
 `;
 
 const ListItem = ({ item, expired }) => {
-  const { todayListID } = useTodayList();
+  const { todayListID, todayListItemNames, setTodayListItemNames } =
+    useTodayList();
 
   const handleTogglePicked = async () => {
     if (expired) return;
@@ -32,6 +33,9 @@ const ListItem = ({ item, expired }) => {
     try {
       await axios.delete(
         `${import.meta.env.VITE_API_URL}/api/items/${item._id}`
+      );
+      setTodayListItemNames((prevNames) =>
+        prevNames.filter((name) => name !== item.name)
       );
     } catch (error) {
       console.error("Error deleting item:", error);
