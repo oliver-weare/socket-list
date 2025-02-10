@@ -3,17 +3,20 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { useTodayList } from "../context/TodayListContext";
+
 const ItemForm = ({
   listID,
-  itemNames = [],
   showBlockSubmissionOverlay,
   onBlockSubmissionChange,
 }) => {
   const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState(1);
+
+  const { todayListID, todayListItemNames, setTodayListItemNames } =
+    useTodayList();
 
   useEffect(() => {
-    if (itemNames.includes(name)) {
+    if (todayListItemNames.includes(name)) {
       onBlockSubmissionChange(true);
     } else {
       onBlockSubmissionChange(false);
@@ -25,12 +28,11 @@ const ItemForm = ({
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/items/create`, {
         name,
-        quantity: Number(quantity),
         listID: listID,
       });
 
+      setTodayListItemNames((prevNames) => [...prevNames, name]);
       setName("");
-      setQuantity(1);
     } catch (error) {
       console.error("Error creating item:", error);
     }
