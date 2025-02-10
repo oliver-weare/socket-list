@@ -5,11 +5,7 @@ import axios from "axios";
 
 import { useTodayList } from "../context/TodayListContext";
 
-const ItemForm = ({
-  listID,
-  showBlockSubmissionOverlay,
-  onBlockSubmissionChange,
-}) => {
+const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
   const [name, setName] = useState("");
 
   const { todayListID, todayListItemNames, setTodayListItemNames } =
@@ -28,7 +24,7 @@ const ItemForm = ({
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/items/create`, {
         name,
-        listID: listID,
+        listID: todayListID,
       });
 
       setTodayListItemNames((prevNames) => [...prevNames, name]);
