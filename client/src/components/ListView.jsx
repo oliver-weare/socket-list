@@ -24,6 +24,8 @@ const ListViewContainer = styled.div`
 const BlockSubmissionOverlay = styled.div`
   height: 72vh;
   position: absolute;
+  padding: 2em;
+  text-align: center;
   top: 2em;
   left: 2em;
   right: 2em;
