@@ -29,7 +29,7 @@ app.use("/api/items", itemRoutes);
 app.use("/api/lists", listRoutes);
 
 app.get("/", (request, response) => {
-  response.send("Co-Shop API active");
+  response.send("API active");
 });
 
 const PORT = process.env.PORT;
