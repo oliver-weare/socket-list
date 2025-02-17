@@ -32,7 +32,7 @@ app.get("/", (request, response) => {
   response.send("Co-Shop API active");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 mongoose
   .connect(process.env.MONGO_URI, {
