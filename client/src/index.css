@@ -43,7 +43,7 @@
 
 .list-view-container {
   padding-top: 1em;
-  height: 72vh;
+  height: 62vh;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
