@@ -1,15 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { useTodayList } from "../context/TodayListContext";
+import { useAppContext } from "../context/AppContext";
 
 const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
   const [name, setName] = useState("");
 
   const { todayListID, todayListItemNames, setTodayListItemNames } =
-    useTodayList();
+    useAppContext();
 
   useEffect(() => {
     if (todayListItemNames.includes(name)) {
@@ -48,7 +46,7 @@ const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
       />
       <button
         type="submit"
-        className="w-25 btn btn-dark rounded-pill"
+        className="add-item-button w-25 btn btn-dark rounded-pill"
         disabled={showBlockSubmissionOverlay}
       >
         Add

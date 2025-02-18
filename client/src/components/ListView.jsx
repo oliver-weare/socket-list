@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import moment from "moment";
 
 import List from "./List";

@@ -28,6 +28,19 @@
   }
 }
 
+.list-type-toggle-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+.list-type-button {
+  width: 50%;
+  height: 3em;
+  border-radius: 4em;
+}
+
 .list-view-container {
   padding-top: 1em;
   height: 72vh;
@@ -66,4 +79,8 @@
   width: 3em;
   height: 3em;
   border-radius: 4em;
+}
+
+.add-item-button {
+  height: 3em;
 }

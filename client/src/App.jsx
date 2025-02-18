@@ -4,10 +4,11 @@ import axios from "axios";
 import moment from "moment";
 import { io } from "socket.io-client";
 
-import { useTodayList } from "./context/TodayListContext";
+import { useAppContext } from "./context/AppContext";
 
-import NewListButton from "./components/NewListButton";
+import ListTypeToggle from "./components/ListTypeToggle";
 import ListView from "./components/ListView";
+import NewListButton from "./components/NewListButton";
 import ItemForm from "./components/ItemForm";
 
 const socket = io(`${import.meta.env.VITE_API_URL}`);
@@ -24,7 +25,7 @@ const App = () => {
     setTodayListItemNames,
     todayListExists,
     setTodayListExists,
-  } = useTodayList();
+  } = useAppContext();
 
   const fetchLists = async () => {
     try {
@@ -117,6 +118,7 @@ const App = () => {
 
   return (
     <div>
+      <ListTypeToggle />
       <ListView
         todayListID={todayListID}
         lists={lists}

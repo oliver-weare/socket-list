@@ -1,9 +1,9 @@
 import axios from "axios";
 
-import { useTodayList } from "../../context/TodayListContext";
+import { useAppContext } from "../../context/AppContext";
 
 const DeleteItemButton = ({ item }) => {
-  const { setTodayListItemNames } = useTodayList();
+  const { setTodayListItemNames } = useAppContext();
 
   const handleDelete = async () => {
     try {
