@@ -34,6 +34,7 @@ router.post("/create/:date", async (request, response) => {
 
     const newList = new List({
       date: formattedDate,
+      category: "grocery",
       ...request.body,
     });
 
