@@ -45,7 +45,8 @@
   }
 }
 
-.delete-item-button {
+.delete-item-button,
+.shift-item-button {
   width: 3.1em;
   height: 3.1em;
   border-radius: 4em;
