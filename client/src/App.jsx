@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 
 import { useAppContext } from "./context/AppContext";
 
-import ListTypeToggle from "./components/ListTypeToggle";
+import ListTypeSwitcher from "./components/ListTypeSwitcher";
 import ListView from "./components/ListView";
 import NewListButton from "./components/NewListButton";
 import ItemForm from "./components/ItemForm";
@@ -118,7 +118,7 @@ const App = () => {
 
   return (
     <div>
-      <ListTypeToggle />
+      <ListTypeSwitcher />
       <ListView
         todayListID={todayListID}
         lists={lists}
