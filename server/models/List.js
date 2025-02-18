@@ -4,11 +4,6 @@ const ListSchema = new mongoose.Schema({
   date: { type: Date, required: true, unique: true },
   items: [{ type: mongoose.Schema.Types.ObjectId, ref: "Item" }],
   expired: { type: Boolean, default: false },
-  category: {
-    type: String,
-    enum: ["grocery", "todo"],
-    required: true,
-  },
 });
 
 ListSchema.methods._updateExpiredField = function () {
