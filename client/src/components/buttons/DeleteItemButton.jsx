@@ -21,7 +21,7 @@ const DeleteItemButton = ({ item }) => {
   return (
     <button
       type="button"
-      className="delete-item-button btn btn-outline-danger rounded-pill ms-2"
+      className="delete-item-button btn btn-outline-danger ms-2"
       onClick={handleDelete}
     >
       <svg
