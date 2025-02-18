@@ -65,13 +65,16 @@
 }
 
 .item-text {
-  text-decoration: "none";
+  text-decoration: none;
   flex-grow: 1;
+  margin-right: 0.3em;
+  font-size: small;
 }
 
 .item-text-picked {
-  text-decoration: "line-through";
+  text-decoration: line-through;
   flex-grow: 1;
+  font-size: small;
 }
 
 .delete-item-button,
