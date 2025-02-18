@@ -1,34 +1,13 @@
 /* eslint-disable react/prop-types */
 import moment from "moment";
-import styled from "styled-components";
 
 import List from "./List";
-
-const BlockSubmissionOverlay = styled.div`
-  height: 72vh;
-  position: absolute;
-  padding: 2em;
-  text-align: center;
-  top: 2em;
-  left: 2em;
-  right: 2em;
-  z-index: 1;
-  background: rgba(214, 214, 214, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-
-  @media (min-width: 768px) {
-    height: 78vh;
-  }
-`;
 
 const ListView = ({ lists = [], showBlockSubmissionOverlay }) => {
   return (
     <div className="list-view-container border-top border-bottom mb-4">
       {showBlockSubmissionOverlay && (
-        <BlockSubmissionOverlay>
+        <div className="block-submission-overlay">
           <div className="card">
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
               <svg
@@ -44,7 +23,7 @@ const ListView = ({ lists = [], showBlockSubmissionOverlay }) => {
               <p className="lead">This item is already in today&apos;s list.</p>
             </div>
           </div>
-        </BlockSubmissionOverlay>
+        </div>
       )}
       {Array.isArray(lists) &&
         lists.map((list) => (
