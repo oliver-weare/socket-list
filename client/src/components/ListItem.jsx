@@ -25,13 +25,15 @@ const ListItem = ({ item, expired }) => {
       }`}
     >
       <button
-        className={`toggle-item-button btn d-flex align-items-center rounded-pill ${
+        className={`toggle-item-button btn d-flex align-items-center rounded-pill p-3  ${
           expired && !item.pickedUp ? "btn-warning" : "btn-outline-dark"
         }`}
         onClick={handleTogglePicked}
         disabled={expired}
       >
-        <span className={`${item.pickedUp ? "item-text-picked" : "item-text"}`}>
+        <span
+          className={`${item.pickedUp ? "item-text-picked" : "item-text"} `}
+        >
           {item.name}
         </span>
         {item.pickedUp ? (
