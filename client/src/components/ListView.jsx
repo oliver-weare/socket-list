@@ -4,23 +4,6 @@ import styled from "styled-components";
 
 import List from "./List";
 
-const ListViewContainer = styled.div`
-  padding-top: 1em;
-  height: 72vh;
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  @media (min-width: 768px) {
-    height: 78vh;
-  }
-`;
-
 const BlockSubmissionOverlay = styled.div`
   height: 72vh;
   position: absolute;
@@ -43,7 +26,7 @@ const BlockSubmissionOverlay = styled.div`
 
 const ListView = ({ lists = [], showBlockSubmissionOverlay }) => {
   return (
-    <ListViewContainer className="border-top border-bottom mb-4">
+    <div className="list-view-container border-top border-bottom mb-4">
       {showBlockSubmissionOverlay && (
         <BlockSubmissionOverlay>
           <div className="card">
@@ -72,7 +55,7 @@ const ListView = ({ lists = [], showBlockSubmissionOverlay }) => {
             expired={list.expired}
           />
         ))}
-    </ListViewContainer>
+    </div>
   );
 };
 
