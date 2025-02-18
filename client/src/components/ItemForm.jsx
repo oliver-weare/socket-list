@@ -6,8 +6,12 @@ import { useAppContext } from "../context/AppContext";
 const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
   const [name, setName] = useState("");
 
-  const { todayListID, todayListItemNames, setTodayListItemNames } =
-    useAppContext();
+  const {
+    todayListID,
+    todayListItemNames,
+    setTodayListItemNames,
+    currentCategory,
+  } = useAppContext();
 
   useEffect(() => {
     if (todayListItemNames.includes(name)) {
@@ -23,6 +27,7 @@ const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/items/create`, {
         name,
         listID: todayListID,
+        category: currentCategory,
       });
 
       setTodayListItemNames((prevNames) => [...prevNames, name]);
