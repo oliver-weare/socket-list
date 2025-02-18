@@ -44,3 +44,9 @@
     height: 78vh;
   }
 }
+
+.delete-item-button {
+  width: 3.1em;
+  height: 3.1em;
+  border-radius: 4em;
+}
