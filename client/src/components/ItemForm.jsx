@@ -1,15 +1,17 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import { useTodayList } from "../context/TodayListContext";
+import { useAppContext } from "../context/AppContext";
 
 const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
   const [name, setName] = useState("");
 
-  const { todayListID, todayListItemNames, setTodayListItemNames } =
-    useTodayList();
+  const {
+    todayListID,
+    todayListItemNames,
+    setTodayListItemNames,
+    currentCategory,
+  } = useAppContext();
 
   useEffect(() => {
     if (todayListItemNames.includes(name)) {
@@ -25,6 +27,7 @@ const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
       await axios.post(`${import.meta.env.VITE_API_URL}/api/items/create`, {
         name,
         listID: todayListID,
+        category: currentCategory,
       });
 
       setTodayListItemNames((prevNames) => [...prevNames, name]);
@@ -48,7 +51,7 @@ const ItemForm = ({ showBlockSubmissionOverlay, onBlockSubmissionChange }) => {
       />
       <button
         type="submit"
-        className="w-25 btn btn-dark rounded-pill"
+        className="add-item-button w-25 btn btn-dark rounded-pill"
         disabled={showBlockSubmissionOverlay}
       >
         Add

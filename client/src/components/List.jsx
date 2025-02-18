@@ -1,13 +1,6 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 
-import styled from "styled-components";
-
 import ListItem from "./ListItem";
-
-const ListContainer = styled.div`
-  margin-bottom: 1em;
-`;
 
 const List = ({ date, items = [], expired }) => {
   const [listItems, setListItems] = useState(items);
@@ -23,7 +16,7 @@ const List = ({ date, items = [], expired }) => {
   }, [listItems]);
 
   return (
-    <ListContainer className="w-100 d-flex flex-column align-items-center">
+    <div className="w-100 d-flex flex-column align-items-center mb-4">
       <h5>{date}</h5>
       {itemsPickedUp === items.length && items.length > 0 ? (
         <svg
@@ -58,7 +51,7 @@ const List = ({ date, items = [], expired }) => {
           <ListItem key={item._id} item={item} expired={expired} />
         ))}
       </ul>
-    </ListContainer>
+    </div>
   );
 };
 

@@ -6,11 +6,12 @@ const List = require("../models/List");
 
 router.post("/create", async (request, response) => {
   try {
-    const { name, listID } = request.body;
+    const { name, listID, category } = request.body;
 
     const newItem = new Item({
       name,
       list: listID,
+      category,
     });
 
     const savedItem = await newItem.save();

@@ -4,6 +4,11 @@ const ItemSchema = new mongoose.Schema({
   name: { type: String, required: true },
   pickedUp: { type: Boolean, default: false },
   list: { type: mongoose.Schema.Types.ObjectId, ref: "List", required: true },
+  category: {
+    type: String,
+    enum: ["grocery", "todo"],
+    required: true,
+  },
 });
 
 ItemSchema.pre(

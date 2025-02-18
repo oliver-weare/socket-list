@@ -4,12 +4,12 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 
-import { TodayListProvider } from "./context/TodayListContext.jsx";
+import { AppProvider } from "./context/AppContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <TodayListProvider>
+    <AppProvider>
       <App />
-    </TodayListProvider>
+    </AppProvider>
   </StrictMode>
 );

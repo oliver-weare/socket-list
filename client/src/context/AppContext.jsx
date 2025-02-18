@@ -1,16 +1,15 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
 
-const TodayListContext = createContext();
+const AppContext = createContext();
 
-export const TodayListProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
   const [todayListID, setTodayListID] = useState(null);
   const [todayListItemNames, setTodayListItemNames] = useState([]);
   const [todayListExists, setTodayListExists] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState("grocery");
 
   return (
-    <TodayListContext.Provider
+    <AppContext.Provider
       value={{
         todayListID,
         setTodayListID,
@@ -18,11 +17,13 @@ export const TodayListProvider = ({ children }) => {
         setTodayListItemNames,
         todayListExists,
         setTodayListExists,
+        currentCategory,
+        setCurrentCategory,
       }}
     >
       {children}
-    </TodayListContext.Provider>
+    </AppContext.Provider>
   );
 };
 
-export const useTodayList = () => useContext(TodayListContext);
+export const useAppContext = () => useContext(AppContext);
