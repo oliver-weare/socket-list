@@ -1,7 +1,24 @@
+import { useAppContext } from "../context/AppContext";
+
 const ListTypeToggle = () => {
+  const { currentCategory, setCurrentCategory } = useAppContext();
+
+  const handleSetCategoryToGrocery = () => {
+    setCurrentCategory("grocery");
+  };
+
+  const handleSetCategoryToTodo = () => {
+    setCurrentCategory("todo");
+  };
+
   return (
     <div className="list-type-toggle-container">
-      <button className="list-type-button btn btn-dark me-1">
+      <button
+        className={`list-type-button btn  me-1 ${
+          currentCategory === "grocery" ? "disabled btn-success" : "btn-dark"
+        }`}
+        onClick={handleSetCategoryToGrocery}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -13,7 +30,12 @@ const ListTypeToggle = () => {
           <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4z" />
         </svg>
       </button>
-      <button className="list-type-button btn btn-dark ms-1">
+      <button
+        className={`list-type-button btn ms-1 ${
+          currentCategory === "todo" ? "disabled btn-success" : "btn-dark"
+        }`}
+        onClick={handleSetCategoryToTodo}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
