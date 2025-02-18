@@ -1,6 +1,6 @@
 import { useAppContext } from "../context/AppContext";
 
-const ListTypeToggle = () => {
+const ListTypeSwitcher = () => {
   const { currentCategory, setCurrentCategory } = useAppContext();
 
   const handleSetCategoryToGrocery = () => {
@@ -51,4 +51,4 @@ const ListTypeToggle = () => {
   );
 };
 
-export default ListTypeToggle;
+export default ListTypeSwitcher;
