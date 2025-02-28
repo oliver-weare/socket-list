@@ -1,5 +1,3 @@
-# Socket List
-
 # Prerequisites
 
 ## Node.js Environment
@@ -33,8 +31,6 @@
 - **HTML/CSS:** For frontend development
 - **RESTful API concepts:** For designing server endpoints
 - **Asynchronous programming:** For handling WebSocket connections
-
----
 
 # Setup
 
