@@ -92,5 +92,3 @@ Start both the client and server with a single command:
 ```
 
 The application should now be running at [http://localhost:5173](http://localhost:5173) with the server at the designated port on localhost.
-
----
