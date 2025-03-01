@@ -65,7 +65,7 @@ const List = ({ date, items = [], expired }) => {
             </svg>
           )}
           <p>
-            {items.length === 0
+            {groceryItems.length === 0
               ? "No groceries"
               : `${groceryItemsPickedUp} of ${groceryItems.length}`}
           </p>
@@ -96,7 +96,7 @@ const List = ({ date, items = [], expired }) => {
             </svg>
           )}
           <p>
-            {items.length === 0
+            {toDoItems.length === 0
               ? "No todos"
               : `${toDoItemsDone} of ${toDoItems.length}`}
           </p>
