@@ -97,7 +97,7 @@ const List = ({ date, items = [], expired }) => {
           )}
           <p>
             {items.length === 0
-              ? "No groceries"
+              ? "No todos"
               : `${toDoItemsDone} of ${toDoItems.length}`}
           </p>
         </div>
