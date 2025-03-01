@@ -60,11 +60,7 @@ const App = () => {
 
     socket.on("itemAdded", ({ listID, item }) => {
       console.log("New item added:", item);
-      setLists((prevLists) =>
-        prevLists.map((list) =>
-          list._id === listID ? { ...list, items: [...list.items, item] } : list
-        )
-      );
+      fetchLists();
     });
 
     socket.on("itemToggled", ({ listID, item }) => {
