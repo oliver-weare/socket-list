@@ -58,9 +58,8 @@ const App = () => {
       setTodayListID(newList._id);
     });
 
-    socket.on("itemAdded", ({ listID, item }) => {
+    socket.on("itemAdded", (item) => {
       console.log("New item added:", item);
-      fetchLists();
     });
 
     socket.on("itemToggled", ({ listID, item }) => {
