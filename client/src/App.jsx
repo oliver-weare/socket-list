@@ -9,7 +9,7 @@ import { useAppContext } from "./context/AppContext";
 import ListTypeSwitcher from "./components/ListTypeSwitcher";
 import ListView from "./components/ListView";
 import NewListButton from "./components/buttons/NewListButton";
-import ItemForm from "./components/ItemForm";
+import ItemForm from "./components/forms/ItemForm";
 
 const socket = io(`${import.meta.env.VITE_API_URL}`);
 
