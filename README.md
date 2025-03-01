@@ -1,11 +1,11 @@
 # Prerequisites
 
-## Node.js Environment
+**Node.js Environment**
 
 - **Node.js (v16+):** The runtime environment for executing JavaScript code server-side
 - **npm or yarn:** Package manager for installing dependencies
 
-## Development Tools
+**Development Tools**
 
 - **Vite:** Frontend build tool and development server that provides fast HMR (Hot Module Replacement)
 - **Express:** Web application framework for Node.js to build the backend server
@@ -13,19 +13,19 @@
 - **MongoDB:** NoSQL database for storing application data
 - **Bootstrap:** CSS framework for responsive and mobile-first front-end development
 
-## Database Setup
+**Database Setup**
 
 - **MongoDB Atlas account** or local MongoDB installation
 - **MongoDB connection string** for connecting your application to the database
 
-## Additional Dependencies
+**Additional Dependencies**
 
 - **mongoose:** MongoDB object modelling tool for Node.js
 - **socket.io:** Library for WebSocket implementation
 - **dotenv:** Module for loading environment variables from a .env file
 - **cors:** Middleware for enabling CORS in Express
 
-## Basic Knowledge Requirements
+**Basic Knowledge Requirements**
 
 - **JavaScript/ES6+:** Core programming language
 - **HTML/CSS:** For frontend development
@@ -36,14 +36,14 @@
 
 Follow these steps to set up the project:
 
-## 1. Clone the Repository
+**1. Clone the Repository**
 
 ```bash
 git clone https://github.com/oliver-weare/socket-list
 cd socket-list
 ```
 
-## 2. Client Setup
+**2. Client Setup**
 
 ```bash
 cd client
@@ -62,7 +62,7 @@ Edit the .env file with your configuration:
 VITE_API_URL=url-to-api
 ```
 
-## 3. Server Setup
+**3. Server Setup**
 
 ```bash
 cd ../server
@@ -83,7 +83,7 @@ MONGO_URI=your-db
 JWT_SECRET=some-key
 ```
 
-## 4. Run the Application
+**4. Run the Application**
 
 Start both the client and server with a single command:
 
