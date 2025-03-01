@@ -126,7 +126,6 @@ const App = () => {
       />
       {todayListExists ? (
         <ItemForm
-          listID={todayListID}
           itemNames={todayListItemNames}
           showBlockSubmissionOverlay={showBlockSubmissionOverlay}
           onBlockSubmissionChange={handleBlockSubmissionChange}
